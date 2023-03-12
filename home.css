@@ -141,6 +141,14 @@ p {
     margin: 2rem;
 }
 
+article h2 {
+    font-size: 2rem;
+    margin: 0;
+    text-align: center;
+    color: #1f499d;
+    padding: 1rem;
+}	
+
 .card {
     display: flex;
     flex-direction: column;
