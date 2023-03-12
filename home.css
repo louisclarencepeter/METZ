@@ -98,7 +98,7 @@ section img {
 }
 
 banner {
-    background: url(./images/banner.jpg) no-repeat center center/cover;
+    background: url(./images/pexels-jeshootscom-442580.jpg) no-repeat center center/cover;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -110,6 +110,7 @@ banner p {
     font-size: 2rem;
     text-align: center;
     font-style: italic;
+    color: #fff;
 }
 
 p {
