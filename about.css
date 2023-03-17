@@ -120,6 +120,12 @@ section div {
     padding: 1rem;
 }
 
+section div img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 article {
     width: 100%;
     display: flex;
