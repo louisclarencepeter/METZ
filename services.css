@@ -35,14 +35,14 @@ header img {
     border-radius: 50%;
 }
 
-ul {
+nav ul {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
 }
 
-li {
+nav li {
     list-style: none;
     text-decoration: none;
     font-size: 1rem;
@@ -68,12 +68,20 @@ h2 {
     color: #1f499d
 }
 
+h3 {
+    font-size: 1.5rem;
+    margin: 0;
+    text-align: center;
+    color: #1f499d
+}
+
 main {
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 2rem;
 }
 
 footer {
@@ -90,4 +98,19 @@ footer {
 p {
     padding: 1rem;
     font-size: 1.5rem;
+}
+
+li {
+    font-size: 1rem;
+}
+
+.safety {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.safety img {
+    border-radius: 10%;
 }
