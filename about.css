@@ -93,12 +93,18 @@ p {
 
 table {
     border-collapse: collapse;
-    font-size: 5rem;
+    font-size: 4rem;
+    width: 100%;
 }
 
 td,
 th {
     padding: 0.3rem;
+}
+
+th {
+    font-size: 1rem;
+    text-align: left;
 }
 
 section {
@@ -140,6 +146,7 @@ article {
     justify-content: center;
     align-items: center;
 }
+
 
 h3 {
     font-size: 2rem;
