@@ -225,3 +225,44 @@ h4 {
         font-size: 2.5rem;
     }
 }
+
+@media screen and (min-width: 1200px) {
+
+    header img {
+        width: 7rem;
+        height: 7rem;
+    }
+
+    li {
+        font-size: 3rem;
+    }
+
+    h1 {
+        font-size: 5rem;
+    }
+
+    h2 {
+        font-size: 4rem;
+    }
+
+    p {
+        padding: 4rem;
+        font-size: 4rem;
+    }
+
+    h3 {
+        font-size: 4rem;
+    }
+
+    h4 {
+        font-size: 3rem;
+    }
+
+    table {
+        font-size: 12rem;
+    }
+
+    footer p {
+        font-size: 3rem;
+    }
+}
