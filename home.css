@@ -5,11 +5,6 @@
     margin: 0;
 }
 
-html {
-    height: 100vh;
-    width: 100vw;
-}
-
 body {
     font-family: 'Open Sans', sans-serif;
     font-size: 1.6rem;
@@ -31,7 +26,8 @@ header {
 }
 
 header img {
-    width: 50px;
+    width: 5rem;
+    height: 5rem;
     border-radius: 50%;
 }
 
@@ -103,6 +99,7 @@ banner {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
 }
 
 banner p {
@@ -132,14 +129,6 @@ p {
     opacity: 0.8;
 }
 
-#our-projects {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    margin: 2rem;
-}
 
 article h2 {
     font-size: 2rem;
@@ -189,4 +178,149 @@ footer {
     display: flex;
     flex-direction: row;
     justify-content: center;
+}
+
+@media screen and (min-width: 768px) {
+
+    li {
+        font-size: 2rem;
+    }
+
+    h1 {
+        font-size: 3rem;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+    }
+
+    h3 {
+        font-size: 2rem;
+    }
+
+    section img {
+        width: 10rem;
+        height: 10rem;
+    }
+
+    banner p {
+        padding: 10rem;
+        font-size: 3rem;
+    }
+
+    p {
+        padding: 2rem;
+        font-size: 2rem;
+    }
+
+    article h2 {
+        font-size: 2.5rem;
+    }
+
+    footer p {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+
+    li {
+        font-size: 2.5rem;
+    }
+
+    h1 {
+        font-size: 4rem;
+    }
+
+    h2 {
+        font-size: 3rem;
+    }
+
+    h3 {
+        font-size: 2.5rem;
+    }
+
+    section img {
+        width: 15rem;
+        height: 15rem;
+    }
+
+    banner p {
+        padding: 15rem;
+        font-size: 4rem;
+    }
+
+    p {
+        padding: 3rem;
+        font-size: 3rem;
+    }
+
+    article h2 {
+        font-size: 3rem;
+    }
+
+    footer p {
+        font-size: 2.5rem;
+    }
+
+    .vm {
+        background-size: 40%;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+
+    header img {
+        width: 7rem;
+        height: 7rem;
+    }
+
+    li {
+        font-size: 3rem;
+    }
+
+    h1 {
+        font-size: 5rem;
+    }
+
+    h2 {
+        font-size: 4rem;
+    }
+
+    h3 {
+        font-size: 3rem;
+    }
+
+    section img {
+        width: 20rem;
+        height: 20rem;
+    }
+
+    banner p {
+        padding: 20rem;
+        font-size: 5rem;
+    }
+
+    p {
+        padding: 4rem;
+        font-size: 3rem;
+    }
+
+    article h2 {
+        font-size: 4rem;
+    }
+
+    .vm {
+        background-size: 30%;
+    }
+
+    .projects {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+    }
+
+    footer p {
+        font-size: 3rem;
+    }
 }
