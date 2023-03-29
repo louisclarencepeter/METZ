@@ -128,6 +128,11 @@ article div img {
     footer p {
         font-size: 2rem;
     }
+
+    p {
+        padding: 2rem;
+        font-size: 2rem;
+    }
 }
 
 @media screen and (min-width: 1024px) {
@@ -146,7 +151,7 @@ article div img {
 
     p {
         padding: 3rem;
-        font-size: 3rem;
+        font-size: 2.5rem;
     }
 
     footer p {

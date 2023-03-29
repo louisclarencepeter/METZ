@@ -115,6 +115,7 @@ section {
     align-items: center;
 }
 
+
 section div {
     width: 100%;
     display: flex;
@@ -206,6 +207,10 @@ h4 {
 
 @media screen and (min-width: 1024px) {
 
+    .status li{
+        font-size: 3rem;
+    }
+
     li {
         font-size: 2.5rem;
     }
@@ -220,7 +225,12 @@ h4 {
 
     p {
         padding: 3rem;
-        font-size: 3rem;
+        font-size: 2.5rem;
+    }
+
+    section div img {
+        width: 30%;
+        height: 30%;
     }
 
     h3 {
@@ -247,6 +257,10 @@ h4 {
         height: 7rem;
     }
 
+    article li{
+        font-size: 5rem;
+    }
+
     li {
         font-size: 3rem;
     }
@@ -259,9 +273,13 @@ h4 {
         font-size: 4rem;
     }
 
+    th {
+        font-size: 2rem;
+    }
+
     p {
         padding: 4rem;
-        font-size: 4rem;
+        font-size: 3rem;
     }
 
     h3 {

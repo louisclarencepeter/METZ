@@ -253,7 +253,7 @@ footer {
 
     p {
         padding: 3rem;
-        font-size: 3rem;
+        font-size: 2.5rem;
     }
 
     article h2 {
@@ -292,6 +292,11 @@ footer {
         font-size: 3rem;
     }
 
+    .particulars {
+        width: 100%;
+        margin: 0 auto;
+    }
+
     section img {
         width: 20rem;
         height: 20rem;
@@ -323,5 +328,61 @@ footer {
 
     footer p {
         font-size: 3rem;
+    }
+}
+
+@media screen and (min-width: 1920px) {
+
+    body {
+        width: 60%;
+        margin: 0 auto;
+    }
+
+    header img {
+        width: 10rem;
+        height: 10rem;
+    }
+
+    li {
+        font-size: 4rem;
+    }
+
+    h1 {
+        font-size: 6rem;
+    }
+
+    h2 {
+        font-size: 5rem;
+    }
+
+    h3 {
+        font-size: 4rem;
+    }
+
+    section img {
+        width: 25rem;
+        height: 25rem;
+    }
+
+    banner p {
+        padding: 25rem;
+        font-size: 6rem;
+    }
+
+    p {
+        padding: 5rem;
+        font-size: 4rem;
+    }
+
+    article h2 {
+        font-size: 5rem;
+    }
+
+    .vm {
+        background-size: 20%;
+    }
+
+    footer p {
+        font-size: 4rem;
     }
 }

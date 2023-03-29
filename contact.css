@@ -148,6 +148,11 @@ p {
     footer p {
         font-size: 2rem;
     }
+
+    p {
+        padding: 2rem;
+        font-size: 2rem;
+    }
 }
 
 @media screen and (min-width: 1024px) {
@@ -177,6 +182,11 @@ p {
     }
 
     footer p {
+        font-size: 2.5rem;
+    }
+
+    p {
+        padding: 2rem;
         font-size: 2.5rem;
     }
 }
