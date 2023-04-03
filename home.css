@@ -281,15 +281,15 @@ footer {
     }
 
     h1 {
-        font-size: 5rem;
-    }
-
-    h2 {
         font-size: 4rem;
     }
 
-    h3 {
+    h2 {
         font-size: 3rem;
+    }
+
+    h3 {
+        font-size: 2.5rem;
     }
 
     .particulars {
@@ -304,20 +304,20 @@ footer {
 
     banner p {
         padding: 20rem;
-        font-size: 5rem;
+        font-size: 4rem;
     }
 
     p {
         padding: 4rem;
-        font-size: 3rem;
+        font-size: 2rem;
     }
 
     article h2 {
-        font-size: 4rem;
+        font-size: 3rem;
     }
 
     .vm {
-        background-size: 30%;
+        background-size: 15%;
     }
 
     .projects {
@@ -327,11 +327,19 @@ footer {
     }
 
     footer p {
-        font-size: 3rem;
+        font-size: 2rem;
+    }
+
+    section div{
+        border-radius: 2.5%;
+    }
+
+    section img {
+        border-radius: 2.5%;
     }
 }
 
-@media screen and (min-width: 1920px) {
+@media screen and (min-width: 1921px) {
 
     body {
         width: 60%;

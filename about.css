@@ -208,7 +208,7 @@ h4 {
 @media screen and (min-width: 1024px) {
 
     .status li{
-        font-size: 3rem;
+        font-size: 2.5rem;
     }
 
     li {
@@ -229,8 +229,9 @@ h4 {
     }
 
     section div img {
-        width: 30%;
-        height: 30%;
+        width: 25%;
+        height: 25%;
+        border-radius: 5%;
     }
 
     h3 {
@@ -258,7 +259,7 @@ h4 {
     }
 
     article li{
-        font-size: 5rem;
+        font-size: 3rem;
     }
 
     li {
@@ -266,11 +267,11 @@ h4 {
     }
 
     h1 {
-        font-size: 5rem;
+        font-size: 4rem;
     }
 
     h2 {
-        font-size: 4rem;
+        font-size: 3rem;
     }
 
     th {
@@ -279,22 +280,22 @@ h4 {
 
     p {
         padding: 4rem;
-        font-size: 3rem;
+        font-size: 2rem;
     }
 
     h3 {
-        font-size: 4rem;
+        font-size: 2.5rem;
     }
 
     h4 {
-        font-size: 3rem;
+        font-size: 2rem;
     }
 
     table {
-        font-size: 12rem;
+        font-size: 7rem;
     }
 
     footer p {
-        font-size: 3rem;
+        font-size: 2rem;
     }
 }
