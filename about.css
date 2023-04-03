@@ -298,4 +298,11 @@ h4 {
     footer p {
         font-size: 2rem;
     }
+
+    .particulars {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
 }
