@@ -140,7 +140,7 @@ section li {
 @media screen and (min-width: 1024px) {
 
     nav li {
-        font-size: 2.5rem;
+        font-size: 3rem;
     }
 
     section li {
@@ -157,10 +157,10 @@ section li {
 
     p {
         padding: 3rem;
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
 
     footer p {
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
 }
