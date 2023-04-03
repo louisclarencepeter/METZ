@@ -158,7 +158,7 @@ p {
 @media screen and (min-width: 1024px) {
 
     nav li {
-        font-size: 2.5rem;
+        font-size: 3rem;
     }
 
     h2 {
@@ -166,27 +166,27 @@ p {
     }
 
     input {
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
 
     textarea {
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
 
     button {
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
 
     label {
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
 
     footer p {
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
 
     p {
         padding: 2rem;
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
 }

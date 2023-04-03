@@ -138,7 +138,7 @@ article div img {
 @media screen and (min-width: 1024px) {
 
     nav li {
-        font-size: 2.5rem;
+        font-size: 3rem;
     }
 
     h2 {
@@ -151,10 +151,10 @@ article div img {
 
     p {
         padding: 3rem;
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
 
     footer p {
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
 }
