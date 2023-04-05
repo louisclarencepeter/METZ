@@ -101,6 +101,7 @@ banner {
     justify-content: center;
     align-items: center;
     width: 100%;
+    height: 90vh;
 }
 
 banner p {
@@ -112,7 +113,7 @@ banner p {
 }
 
 p {
-    padding: 1rem;
+    padding: 2rem;
     font-size: 1.5rem;
 }
 
