@@ -129,6 +129,7 @@ section div img {
     width: 60%;
     height: 60%;
     object-fit: cover;
+    border-radius: 5%;
 }
 
 article {
@@ -192,6 +193,10 @@ h4 {
         height: 50%;
     }
 
+    .status li{
+        font-size: 2rem;
+    }
+
     h3 {
         font-size: 2.5rem;
     }
@@ -244,6 +249,10 @@ h4 {
 
     table {
         font-size: 10rem;
+    }
+
+    th {
+        font-size: 2rem;
     }
 
     footer p {
