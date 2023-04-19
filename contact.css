@@ -157,6 +157,10 @@ p {
 
 @media screen and (min-width: 1024px) {
 
+    main {
+        height: 75.1vh;
+    }
+
     nav li {
         font-size: 3rem;
     }
