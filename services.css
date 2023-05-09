@@ -193,35 +193,13 @@ section li {
     }
 
     footer p {
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
 }
 
-@media screen and (min-width: px) {
-
-    nav li {
-        font-size: 4rem;
-    }
-
-    section li {
-        font-size: 3.5rem;
-    }
-
-    h2 {
-        font-size: 4rem;
-    }
-
-    h3 {
-        font-size: 3.5rem;
-    }
-
-    p {
-        padding: 3rem;
-        font-size: 3rem;
-    }
-
-    footer p {
-        font-size: 3rem;
+@media screen and (min-width: 1921px) {
+    main {
+        width: 60%;
+        margin: 0 auto;
     }
 }
-
