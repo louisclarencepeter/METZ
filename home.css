@@ -19,8 +19,11 @@ body {
 }
 
 header {
-    width: 100%;
     background-color: #192738;
+}
+
+.header {
+    width: 100%;
     color: #fff;
     text-align: center;
     padding: 2rem;
@@ -348,6 +351,11 @@ footer {
 }
 
 @media screen and (min-width: 1921px) {
+
+    .header {
+        width: 60%;
+        margin: 0 auto;
+    }
 
     main {
         width: 60%;
