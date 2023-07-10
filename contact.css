@@ -19,6 +19,10 @@ body {
 }
 
 header {
+    background-color: #192738;
+}
+
+.header {
     width: 100%;
     background-color: #192738;
     color: #fff;
@@ -239,6 +243,12 @@ p {
 }
 
 @media screen and (min-width: 1921px) {
+
+    .header {
+        width: 60%;
+        margin: 0 auto;
+    }
+    
     main {
         width: 60%;
         margin: 0 auto;
