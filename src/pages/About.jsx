@@ -6,57 +6,65 @@ import {
   legalStatus,
   managementTeam,
 } from "../data/content.js";
+import { useI18n } from "../i18n.jsx";
 
 export default function About() {
+  const { t } = useI18n();
   return (
     <main id="main-content">
       <PageHero
-        eyebrow="About METZ"
-        title="A registered Tanzanian contractor with a hands-on leadership team."
-        body="METZ Engineering Co. Limited combines construction experience, technical oversight, and practical site management for building and civil works."
+        eyebrow={t("about.eyebrow")}
+        title={t("about.title")}
+        body={t("about.body")}
         image="/images/Projects/p1/pr2.png"
       />
 
       <section className="content-band details-grid">
         <article className="detail-panel">
-          <SectionIntro eyebrow="Legal profile" title="Company particulars" />
+          <SectionIntro eyebrow={t("about.legalProfile")} title={t("about.particulars")} />
           <dl className="definition-list">
-            {companyParticulars.map(([label, value]) => (
-              <div key={label}>
-                <dt>{label}</dt>
-                <dd>{value}</dd>
-              </div>
-            ))}
+            {companyParticulars.map(([label, value]) => {
+              const labelText = t(label);
+              return (
+                <div key={labelText}>
+                  <dt>{labelText}</dt>
+                  <dd>{t(value)}</dd>
+                </div>
+              );
+            })}
           </dl>
         </article>
 
         <article className="detail-panel">
-          <SectionIntro eyebrow="Compliance" title="Registration and status" />
+          <SectionIntro eyebrow={t("about.compliance")} title={t("about.regStatus")} />
           <ul className="check-list">
-            {legalStatus.map((status) => (
-              <li key={status}>
-                <BadgeCheck size={18} aria-hidden="true" />
-                {status}
-              </li>
-            ))}
+            {legalStatus.map((status) => {
+              const text = t(status);
+              return (
+                <li key={text}>
+                  <BadgeCheck size={18} aria-hidden="true" />
+                  {text}
+                </li>
+              );
+            })}
           </ul>
         </article>
       </section>
 
       <section className="content-band">
         <SectionIntro
-          eyebrow="Leadership"
-          title="Board of directors"
-          body="The company is led by construction and quantity surveying professionals with deep operational experience."
+          eyebrow={t("about.leadership")}
+          title={t("about.directors")}
+          body={t("about.directorsBody")}
         />
         <div className="people-grid">
           {directors.map((director) => (
             <article className="person-card" key={director.name}>
-              <img src={director.image} alt="" loading="lazy" decoding="async" />
+              <img src={director.image} alt={t(director.alt)} loading="lazy" decoding="async" />
               <div>
-                <span>{director.role}</span>
+                <span>{t(director.role)}</span>
                 <h3>{director.name}</h3>
-                <p>{director.bio}</p>
+                <p>{t(director.bio)}</p>
               </div>
             </article>
           ))}
@@ -65,25 +73,25 @@ export default function About() {
 
       <section className="content-band">
         <SectionIntro
-          eyebrow="Personnel"
-          title="Executive management team"
-          body="A cross-functional team supports finance, marketing, legal, engineering, quantity surveying, records, and safety."
+          eyebrow={t("about.personnel")}
+          title={t("about.management")}
+          body={t("about.managementBody")}
         />
         <div className="table-shell">
           <table>
             <thead>
               <tr>
-                <th scope="col">Role</th>
-                <th scope="col">Name</th>
-                <th scope="col">Qualification</th>
-                <th scope="col">Experience</th>
+                <th scope="col">{t("about.tableRole")}</th>
+                <th scope="col">{t("about.tableName")}</th>
+                <th scope="col">{t("about.tableQual")}</th>
+                <th scope="col">{t("about.tableExp")}</th>
               </tr>
             </thead>
             <tbody>
               {managementTeam.map((member) => (
-                <tr key={`${member[0]}-${member[1]}`}>
-                  {member.map((cell) => (
-                    <td key={cell}>{cell}</td>
+                <tr key={`${t(member[0])}-${member[1]}`}>
+                  {member.map((cell, columnIndex) => (
+                    <td key={columnIndex}>{t(cell)}</td>
                   ))}
                 </tr>
               ))}
@@ -95,11 +103,8 @@ export default function About() {
       <section className="content-band associate-band">
         <UsersRound size={34} aria-hidden="true" />
         <div>
-          <h2>Associate staff network</h2>
-          <p>
-            METZ maintains relationships with qualified individual personnel who can be engaged on a
-            fee-for-service basis for specialist assignments.
-          </p>
+          <h2>{t("about.associate")}</h2>
+          <p>{t("about.associateBody")}</p>
         </div>
       </section>
     </main>

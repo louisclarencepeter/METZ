@@ -4,9 +4,14 @@ import { NavLink, Navigate, Route, Routes, useLocation } from "react-router-dom"
 import About from "./pages/About.jsx";
 import Contact from "./pages/Contact.jsx";
 import Home from "./pages/Home.jsx";
+import NotFound from "./pages/NotFound.jsx";
 import Projects from "./pages/Projects.jsx";
 import Services from "./pages/Services.jsx";
+import LanguageToggle from "./components/LanguageToggle.jsx";
+import ThemeToggle from "./components/ThemeToggle.jsx";
+import { useI18n } from "./i18n.jsx";
 import { company } from "./data/content.js";
+import { telHref } from "./utils/format.js";
 
 const legacyRoutes = {
   "/home.html": "/",
@@ -17,21 +22,22 @@ const legacyRoutes = {
 };
 
 const navItems = [
-  { to: "/", label: "Home" },
-  { to: "/about", label: "About Us" },
-  { to: "/services", label: "Services" },
-  { to: "/projects", label: "Projects" },
-  { to: "/contact", label: "Contact" },
+  { to: "/", key: "nav.home" },
+  { to: "/about", key: "nav.about" },
+  { to: "/services", key: "nav.services" },
+  { to: "/projects", key: "nav.projects" },
+  { to: "/contact", key: "nav.contact" },
 ];
 
 function usePageEffects() {
   const { pathname } = useLocation();
+  const { t, locale } = useI18n();
 
   useEffect(() => {
     const canonicalPath = legacyRoutes[pathname] ?? pathname;
     const page = navItems.find((item) => item.to === canonicalPath);
 
-    document.title = page ? `${page.label} | METZ Engineering` : "METZ Engineering";
+    document.title = page ? `${t(page.key)} | METZ Engineering` : "METZ Engineering";
     window.scrollTo({ top: 0, left: 0 });
 
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -73,12 +79,13 @@ function usePageEffects() {
     });
 
     return () => observer.disconnect();
-  }, [pathname]);
+  }, [pathname, locale, t]);
 }
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
+  const { t } = useI18n();
 
   useEffect(() => {
     setIsOpen(false);
@@ -91,14 +98,14 @@ function Header() {
           <MapPin size={16} aria-hidden="true" />
           {company.address}
         </span>
-        <a href={`tel:${company.phonePrimary}`}>
+        <a href={telHref(company.phonePrimary)}>
           <Phone size={16} aria-hidden="true" />
           {company.phonePrimary}
         </a>
       </div>
 
       <div className="navbar">
-        <NavLink className="brand" to="/" aria-label="METZ Engineering home">
+        <NavLink className="brand" to="/" aria-label={t("nav.aria.brandHome")}>
           <img src="/images/logo.png" alt="METZ Engineering logo" />
           <span>
             <strong>METZ</strong>
@@ -109,25 +116,25 @@ function Header() {
         <button
           className="icon-button nav-toggle"
           type="button"
-          aria-label={isOpen ? "Close navigation" : "Open navigation"}
+          aria-label={isOpen ? t("nav.aria.close") : t("nav.aria.open")}
           aria-expanded={isOpen}
           onClick={() => setIsOpen((current) => !current)}
         >
           {isOpen ? <X size={22} /> : <Menu size={22} />}
         </button>
 
-        <nav className={isOpen ? "primary-nav is-open" : "primary-nav"} aria-label="Main navigation">
+        <nav className={isOpen ? "primary-nav is-open" : "primary-nav"} aria-label={t("nav.aria.main")}>
           <ul>
             {navItems.map((item) => (
               <li key={item.to}>
-                <NavLink to={item.to}>{item.label}</NavLink>
+                <NavLink to={item.to}>{t(item.key)}</NavLink>
               </li>
             ))}
           </ul>
         </nav>
 
         <NavLink className="nav-cta" to="/contact">
-          Start a project
+          {t("nav.cta")}
           <ArrowUpRight size={17} aria-hidden="true" />
         </NavLink>
       </div>
@@ -136,28 +143,29 @@ function Header() {
 }
 
 function Footer() {
+  const { t } = useI18n();
   return (
     <footer className="site-footer">
       <div className="footer-grid">
         <div>
           <img src="/images/logo.png" alt="" />
           <h2>METZ Engineering Co. Limited</h2>
-          <p>{company.tagline}</p>
+          <p>{t(company.tagline)}</p>
         </div>
 
         <address>
-          <strong>Visit us</strong>
+          <strong>{t("footer.visit")}</strong>
           <span>{company.postal}</span>
           <span>{company.address}</span>
         </address>
 
         <div className="footer-contact">
-          <strong>Contact</strong>
-          <a href={`tel:${company.phonePrimary}`}>
+          <strong>{t("footer.contact")}</strong>
+          <a href={telHref(company.phonePrimary)}>
             <Phone size={16} aria-hidden="true" />
             {company.phonePrimary}
           </a>
-          <a href={`tel:${company.phoneSecondary}`}>
+          <a href={telHref(company.phoneSecondary)}>
             <Phone size={16} aria-hidden="true" />
             {company.phoneSecondary}
           </a>
@@ -168,7 +176,13 @@ function Footer() {
         </div>
       </div>
       <div className="footer-base">
-        <p>© {new Date().getFullYear()} METZ Engineering Co. Limited. Built for dependable project delivery.</p>
+        <div className="footer-base__inner">
+          <p>{t("footer.copy", { year: new Date().getFullYear() })}</p>
+          <div className="footer-controls">
+            <LanguageToggle />
+            <ThemeToggle />
+          </div>
+        </div>
       </div>
     </footer>
   );
@@ -178,14 +192,21 @@ function LegacyRedirect({ to }) {
   return <Navigate to={to} replace />;
 }
 
+function SkipLink() {
+  const { t } = useI18n();
+  return (
+    <a className="skip-link" href="#main-content">
+      {t("nav.skip")}
+    </a>
+  );
+}
+
 export default function App() {
   usePageEffects();
 
   return (
     <div className="app-shell">
-      <a className="skip-link" href="#main-content">
-        Skip to content
-      </a>
+      <SkipLink />
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -197,7 +218,7 @@ export default function App() {
         {Object.entries(legacyRoutes).map(([from, to]) => (
           <Route key={from} path={from} element={<LegacyRedirect to={to} />} />
         ))}
-        <Route path="*" element={<Navigate to="/" replace />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
     </div>

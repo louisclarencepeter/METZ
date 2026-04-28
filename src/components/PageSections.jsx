@@ -1,5 +1,6 @@
 import { ArrowUpRight } from "lucide-react";
 import { NavLink } from "react-router-dom";
+import { useI18n } from "../i18n.jsx";
 
 export function PageHero({ eyebrow, title, body, image, actions }) {
   return (
@@ -30,18 +31,16 @@ export function SectionIntro({ eyebrow, title, body }) {
 }
 
 export function Callout() {
+  const { t } = useI18n();
   return (
     <section className="callout">
       <div>
-        <p className="eyebrow">Ready to build</p>
-        <h2>Bring METZ into the project early.</h2>
-        <p>
-          We can help shape scope, budget, safety planning, site execution, and handover from the
-          first practical conversation.
-        </p>
+        <p className="eyebrow">{t("callout.eyebrow")}</p>
+        <h2>{t("callout.title")}</h2>
+        <p>{t("callout.body")}</p>
       </div>
       <NavLink className="button button-dark" to="/contact">
-        Talk to us
+        {t("callout.cta")}
         <ArrowUpRight size={18} aria-hidden="true" />
       </NavLink>
     </section>
