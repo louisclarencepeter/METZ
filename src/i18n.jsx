@@ -143,7 +143,7 @@ const dict = {
     "contact.form.submitting": "Sending...",
     "contact.form.success": "Thanks — your inquiry has been sent. METZ will follow up shortly.",
     "contact.form.error":
-      "Something went wrong sending the form. Please email metz_engineering@yahoo.com directly.",
+      "Something went wrong sending the form. Please email info@metzengineering.co.tz directly.",
     "contact.form.honeypot": "Don't fill this out:",
 
     "notfound.eyebrow": "404",
@@ -298,7 +298,7 @@ const dict = {
     "contact.form.submitting": "Inatuma...",
     "contact.form.success": "Asante — ombi lako limefika. METZ itakujibu hivi karibuni.",
     "contact.form.error":
-      "Samahani, kuna tatizo la kutuma fomu. Tutumie barua pepe moja kwa moja kupitia metz_engineering@yahoo.com.",
+      "Samahani, kuna tatizo la kutuma fomu. Tutumie barua pepe moja kwa moja kupitia info@metzengineering.co.tz.",
     "contact.form.honeypot": "Usijaze hapa:",
 
     "notfound.eyebrow": "404",

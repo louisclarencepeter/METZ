@@ -5,7 +5,7 @@
 If you discover a security issue in this site or repository, please report it
 privately rather than opening a public GitHub issue.
 
-- Email: metz_engineering@yahoo.com
+- Email: info@metzengineering.co.tz
 - Subject line: "Security report — METZ website"
 
 Please include:

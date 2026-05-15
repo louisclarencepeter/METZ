@@ -12,7 +12,7 @@ export const company = {
   postal: "P.O BOX 71003",
   phonePrimary: "+255-765184245",
   phoneSecondary: "+255-754567065",
-  email: "metz_engineering@yahoo.com",
+  email: "info@metzengineering.co.tz",
 };
 
 export const stats = [

@@ -16,12 +16,6 @@ function makeInitial(t) {
   };
 }
 
-function encodeFormData(data) {
-  return Object.keys(data)
-    .map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
-    .join("&");
-}
-
 export default function Contact() {
   const { t } = useI18n();
   const [form, setForm] = useState(() => makeInitial(t));
@@ -39,10 +33,10 @@ export default function Contact() {
     setStatus({ type: "", message: "" });
 
     try {
-      const response = await fetch("/", {
+      const response = await fetch("/api/contact", {
         method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: encodeFormData({ "form-name": "contact", ...form }),
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
       });
 
       if (!response.ok) {
@@ -99,11 +93,8 @@ export default function Contact() {
           className="contact-form"
           name="contact"
           method="POST"
-          data-netlify="true"
-          netlify-honeypot="bot-field"
           onSubmit={submitForm}
         >
-          <input type="hidden" name="form-name" value="contact" />
           <p hidden>
             <label>
               {t("contact.form.honeypot")}
