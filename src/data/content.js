@@ -20,7 +20,7 @@ export const stats = [
   { value: "Class VI", label: { en: "CRB contractor", sw: "Daraja la CRB" } },
   { value: "2030", label: { en: "Growth strategy", sw: "Mkakati hadi 2030" } },
   {
-    value: "TZS 568M+",
+    value: "TZS 50B+",
     label: { en: "Referenced contracts", sw: "Thamani ya mikataba" },
   },
 ];
@@ -335,13 +335,11 @@ const yrs = (n) => ({ en: `${n} years`, sw: `Miaka ${n}` });
 export const managementTeam = [
   [
     { en: "Finance Manager", sw: "Meneja wa Fedha" },
-    "Queen Moccah",
     { en: "Tax Administration", sw: "Usimamizi wa Kodi" },
     yrs(9),
   ],
   [
     { en: "Marketing Manager", sw: "Meneja wa Masoko" },
-    "Sadru Musiba",
     { en: "Bachelor Degree in Marketing", sw: "Shahada ya Masoko" },
     yrs(12),
   ],
@@ -350,19 +348,16 @@ export const managementTeam = [
       en: "Legal Advisor / Human Resource Manager",
       sw: "Mshauri wa Sheria / Meneja wa Rasilimali Watu",
     },
-    "Juliana Changarawe",
     { en: "Bachelor of Law", sw: "Shahada ya Sheria" },
     yrs(15),
   ],
   [
     { en: "Sites / General Manager", sw: "Meneja wa Maeneo / Meneja Mkuu" },
-    "Respicius S. Kabyemela",
     { en: "FTC. Civil Engineer", sw: "FTC. Uhandisi wa Kiraia" },
     yrs(20),
   ],
   [
     { en: "Engineer", sw: "Mhandisi" },
-    "Twahil Abdallah",
     {
       en: "Civil and Water Resources Engineer",
       sw: "Uhandisi wa Kiraia na Rasilimali za Maji",
@@ -371,25 +366,21 @@ export const managementTeam = [
   ],
   [
     { en: "Engineer", sw: "Mhandisi" },
-    "Victor Marko Pallagyo",
     { en: "Civil Engineer", sw: "Uhandisi wa Kiraia" },
     yrs(3),
   ],
   [
     { en: "Secretary", sw: "Katibu" },
-    "Mary Joseph Muronko",
     { en: "Records Management", sw: "Usimamizi wa Kumbukumbu" },
     yrs(3),
   ],
   [
     { en: "Quantity Surveyor", sw: "Mpimaji wa Wingi" },
-    "Irene Andrew Mnyeke",
     { en: "Quantity Surveying", sw: "Upimaji wa Wingi" },
     yrs(7),
   ],
   [
     { en: "Safety and Health Officer", sw: "Afisa wa Usalama na Afya" },
-    "Wily B.M.Machumu",
     { en: "FTC. Civil Engineer", sw: "FTC. Uhandisi wa Kiraia" },
     yrs(25),
   ],

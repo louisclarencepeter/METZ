@@ -82,14 +82,13 @@ export default function About() {
             <thead>
               <tr>
                 <th scope="col">{t("about.tableRole")}</th>
-                <th scope="col">{t("about.tableName")}</th>
                 <th scope="col">{t("about.tableQual")}</th>
                 <th scope="col">{t("about.tableExp")}</th>
               </tr>
             </thead>
             <tbody>
               {managementTeam.map((member) => (
-                <tr key={`${t(member[0])}-${member[1]}`}>
+                <tr key={`${t(member[0])}-${t(member[1])}`}>
                   {member.map((cell, columnIndex) => (
                     <td key={columnIndex}>{t(cell)}</td>
                   ))}
