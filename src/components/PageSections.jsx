@@ -5,11 +5,13 @@ import { useI18n } from "../i18n.jsx";
 export function PageHero({ eyebrow, title, body, image, actions }) {
   return (
     <section className="page-hero">
-      <div className="hero-copy">
-        {eyebrow && <p className="eyebrow">{eyebrow}</p>}
-        <h1>{title}</h1>
-        <p>{body}</p>
-        {actions && <div className="hero-actions">{actions}</div>}
+      <div className="page-hero__inner">
+        <div className="hero-copy">
+          {eyebrow && <p className="eyebrow">{eyebrow}</p>}
+          <h1>{title}</h1>
+          <p>{body}</p>
+          {actions && <div className="hero-actions">{actions}</div>}
+        </div>
       </div>
       {image && (
         <div className="hero-media">

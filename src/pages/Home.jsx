@@ -16,11 +16,11 @@ export default function Home() {
           <h1>METZ Engineering Co. Limited</h1>
           <p>{t(company.tagline)}</p>
           <div className="hero-actions">
-            <NavLink className="button button-primary" to="/projects">
+            <NavLink className="button button-gold" to="/projects">
               {t("home.cta.view")}
               <ArrowRight size={18} aria-hidden="true" />
             </NavLink>
-            <NavLink className="button button-light" to="/contact">
+            <NavLink className="button button-outline" to="/contact">
               {t("home.cta.quote")}
             </NavLink>
           </div>
@@ -28,12 +28,14 @@ export default function Home() {
       </section>
 
       <section className="stats-band" aria-label={t("home.statsAria")}>
-        {stats.map((stat) => (
-          <div key={stat.value}>
-            <strong>{stat.value}</strong>
-            <span>{t(stat.label)}</span>
-          </div>
-        ))}
+        <div className="stats-band__inner">
+          {stats.map((stat) => (
+            <div key={stat.value}>
+              <strong>{stat.value}</strong>
+              <span>{t(stat.label)}</span>
+            </div>
+          ))}
+        </div>
       </section>
 
       <section className="content-band two-column">
@@ -78,7 +80,7 @@ export default function Home() {
           {featuredProjects.map((project) => (
             <article className="project-card" key={t(project.title)}>
               <img src={project.image} alt={t(project.alt)} loading="lazy" decoding="async" />
-              <div>
+              <div className="project-card__content">
                 <span>{t(project.type)}</span>
                 <h3>{t(project.title)}</h3>
                 <p>{project.location}</p>

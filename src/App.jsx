@@ -133,10 +133,6 @@ function Header() {
           </ul>
         </nav>
 
-        <NavLink className="nav-cta" to="/contact">
-          {t("nav.cta")}
-          <ArrowUpRight size={17} aria-hidden="true" />
-        </NavLink>
       </div>
     </header>
   );
