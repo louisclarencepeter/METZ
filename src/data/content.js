@@ -299,6 +299,199 @@ export const legalStatus = [
     en: "Certificate of Registration as Building Contractor Class 6",
     sw: "Cheti cha Usajili — Mkandarasi wa Majengo, Daraja la 6",
   },
+  {
+    en: "Workers Compensation Fund Registration (No. 036995)",
+    sw: "Usajili wa Mfuko wa Fidia kwa Wafanyakazi (Na. 036995)",
+  },
+];
+
+export const corporateClients = [
+  {
+    name: "PUMA Energy",
+    sector: { en: "Petroleum / fuel retail", sw: "Mafuta / vituo vya petroli" },
+  },
+  {
+    name: "TOTAL Tanzania",
+    sector: { en: "Petroleum / fuel retail", sw: "Mafuta / vituo vya petroli" },
+  },
+  {
+    name: "Shanta Mining (Chunya)",
+    sector: { en: "Mining", sw: "Madini" },
+  },
+  {
+    name: "Dangote Cement (Mtwara)",
+    sector: { en: "Cement and industrial", sw: "Saruji na viwanda" },
+  },
+];
+
+export const sectorExperience = [
+  {
+    title: { en: "Mechanical and petroleum", sw: "Ufundi na sekta ya mafuta" },
+    body: {
+      en: "Tank installation, sandblasting, epoxy painting, calibration, pipe fitting, valve services, and stud injectors — delivered for fuel retailers and industrial clients across Tanzania.",
+      sw: "Ufungaji wa matenki, kusafisha kwa mchanga, uchoraji wa epoxy, ukalibre, kazi za mabomba, vivuli vya valve, na vichomeko vya stud — kwa wateja wa mafuta na viwanda nchini kote.",
+    },
+    capabilities: [
+      { en: "Above-ground and underground tank installation", sw: "Ufungaji wa matenki ya juu na chini ya ardhi" },
+      { en: "Welding for steel, alloy, and high-pressure systems", sw: "Kulehemu chuma, aloyi, na mifumo ya shinikizo la juu" },
+      { en: "Sandblasting and epoxy painting", sw: "Kusafisha kwa mchanga na uchoraji wa epoxy" },
+      { en: "Tank, pump, and flow meter calibration", sw: "Ukalibre wa matenki, pampu, na vipima mtiririko" },
+      { en: "Interception chambers and tank-farm slabs", sw: "Vyumba vya kuzuia na sakafu za maeneo ya matenki" },
+    ],
+  },
+  {
+    title: { en: "Civil works", sw: "Kazi za kiraia" },
+    body: {
+      en: "Unpaved and paved road maintenance, box culverts, small bridges, and drainage systems — including a 2km double surface dressing on Wailes Road, Lindi.",
+      sw: "Matengenezo ya barabara za vumbi na za lami, mifereji ya pakubwa, madaraja madogo, na mifumo ya kutoa maji — pamoja na kilomita 2 za lami mara mbili Barabara ya Wailes, Lindi.",
+    },
+    capabilities: [
+      { en: "Road maintenance and double surface dressing", sw: "Matengenezo ya barabara na uwekaji wa lami mara mbili" },
+      { en: "Box culverts and small bridges", sw: "Mifereji ya pakubwa na madaraja madogo" },
+      { en: "Drainage and sewerage systems", sw: "Mifumo ya kutoa maji na maji taka" },
+      { en: "Driveway and concrete slab construction", sw: "Ujenzi wa njia za magari na sakafu za saruji" },
+      { en: "Irrigation system installation", sw: "Ufungaji wa mifumo ya umwagiliaji" },
+    ],
+  },
+  {
+    title: { en: "Building works", sw: "Kazi za majengo" },
+    body: {
+      en: "New residential and commercial buildings, renovations, fire-fighting system installation, finishing, and decoration — including the Mtoni Kijichi affordable housing scheme.",
+      sw: "Majengo mapya ya makazi na biashara, ukarabati, ufungaji wa mifumo ya kuzima moto, umaliziaji, na mapambo — ikiwemo mradi wa nyumba za bei nafuu Mtoni Kijichi.",
+    },
+    capabilities: [
+      { en: "New residential and commercial construction", sw: "Ujenzi mpya wa majengo ya makazi na biashara" },
+      { en: "Renovations and service-station upgrades", sw: "Ukarabati na uboreshaji wa vituo vya huduma" },
+      { en: "Fire-fighting system installation", sw: "Ufungaji wa mifumo ya kuzima moto" },
+      { en: "Interior partitions, painting, and decoration", sw: "Vyumba vidogo vya ndani, rangi, na mapambo" },
+      { en: "Landscaping and finishing", sw: "Mandhari na umaliziaji" },
+    ],
+  },
+];
+
+export const notablePastWorks = [
+  {
+    client: "PUMA Energy",
+    location: { en: "Shanta Mine, Chunya", sw: "Mgodi wa Shanta, Chunya" },
+    scope: {
+      en: "Installation of 8 × 54 m³ fuel tanks on concrete saddles — including pipe fitting, valves, calibration, stair cases, spill channel, and interceptor chamber.",
+      sw: "Ufungaji wa matenki 8 × 54 m³ ya mafuta kwenye misingi ya saruji — pamoja na mabomba, valve, ukalibre, ngazi, na vyumba vya kukamata uchafu.",
+    },
+  },
+  {
+    client: "TOTAL Tanzania (B2B)",
+    location: { en: "Sichuan camp, Masasi", sw: "Kambi ya Sichuan, Masasi" },
+    scope: {
+      en: "Transport, installation, and calibration of a 1 × 50 m³ tank from Kurasini TTL depot — including pump shed fabrication and full pipe-fitting works.",
+      sw: "Usafirishaji, ufungaji, na ukalibre wa tenki 1 × 50 m³ kutoka ghala la TTL Kurasini — pamoja na vibanda vya pampu na kazi kamili za mabomba.",
+    },
+  },
+  {
+    client: "PUMA Energy",
+    location: { en: "Zanzibar airport depot", sw: "Ghala la uwanja wa ndege Zanzibar" },
+    scope: {
+      en: "Major repair of 2 × 54 m³ above-ground tanks: dismantle stair case, new concrete and steel saddles, sandblasting, epoxy painting, reinstallation, and calibration.",
+      sw: "Ukarabati mkubwa wa matenki 2 × 54 m³ ya juu ya ardhi: kuondoa ngazi, misingi mipya ya saruji na chuma, kusafisha kwa mchanga, uchoraji wa epoxy, kufunga upya, na ukalibre.",
+    },
+  },
+  {
+    client: "PUMA Energy",
+    location: { en: "PUMA terminal manifold", sw: "Manifold ya ghala la PUMA" },
+    scope: {
+      en: "Stud injector installation on a 12\" pipe — cut and drain product, fabricate pipe to accommodate the injector, install, and commission.",
+      sw: "Ufungaji wa stud injector kwenye bomba la inchi 12 — kukata na kutoa bidhaa, kutengeneza bomba, kufunga, na kuanzisha matumizi.",
+    },
+  },
+  {
+    client: "Dangote Cement",
+    location: { en: "Mtwara", sw: "Mtwara" },
+    scope: {
+      en: "Calibration of fuel flow meters, fuel system interconnection, and pump repair works at the cement plant.",
+      sw: "Ukalibre wa vipima mtiririko wa mafuta, kuunganisha mfumo wa mafuta, na ukarabati wa pampu kwenye kiwanda cha saruji.",
+    },
+  },
+  {
+    client: "PUMA Energy",
+    location: { en: "Service-station network", sw: "Mtandao wa vituo vya huduma" },
+    scope: {
+      en: "Upgrades and renovations across stations at Lindi, Vingunguti, Mbezi, and Nanenane Morogoro — building works, finishing, and forecourt fit-out.",
+      sw: "Uboreshaji na ukarabati wa vituo Lindi, Vingunguti, Mbezi, na Nanenane Morogoro — kazi za majengo, umaliziaji, na vifaa vya forecourt.",
+    },
+  },
+  {
+    client: "TTL (Tanzania)",
+    location: { en: "Dar, Iringa, Mtwara, Dodoma", sw: "Dar, Iringa, Mtwara, Dodoma" },
+    scope: {
+      en: "Underground tank installation at Dar es Salaam University, Morocco, Iringa Mshindo, Mtwara, and Kizota & Hazina Dodoma TTL service stations.",
+      sw: "Ufungaji wa matenki ya chini ya ardhi katika vituo vya TTL — Chuo Kikuu cha Dar es Salaam, Morocco, Iringa Mshindo, Mtwara, na Kizota na Hazina Dodoma.",
+    },
+  },
+];
+
+export const partnershipPhases = [
+  {
+    abbr: "01",
+    title: { en: "Scope definition", sw: "Kueleza upeo" },
+    body: {
+      en: "Defining and establishing the scope of the construction project with the client up front.",
+      sw: "Kueleza na kupanga upeo wa mradi kwa pamoja na mteja tangu mwanzo.",
+    },
+  },
+  {
+    abbr: "02",
+    title: { en: "Pre-construction planning", sw: "Mipango ya kabla ya ujenzi" },
+    body: {
+      en: "Preparation and scheduling, phasing plans, budgeting and cost modelling, and subcontractor qualification.",
+      sw: "Maandalizi na ratiba, mipango ya awamu, bajeti na makadirio ya gharama, na uchaguzi wa wakandarasi wadogo.",
+    },
+  },
+  {
+    abbr: "03",
+    title: { en: "On-site execution", sw: "Utekelezaji eneoni" },
+    body: {
+      en: "Scheduling, quality control, safety management, sub-contractor management, status reporting, and change management.",
+      sw: "Ratiba, udhibiti wa ubora, usimamizi wa usalama, wakandarasi wadogo, taarifa za maendeleo, na usimamizi wa mabadiliko.",
+    },
+  },
+  {
+    abbr: "04",
+    title: { en: "Monitoring and control", sw: "Ufuatiliaji na udhibiti" },
+    body: {
+      en: "Tracking progress against the plan and intervening early when scope, schedule, or cost drift.",
+      sw: "Kufuatilia maendeleo kulingana na mpango na kuchukua hatua mapema panapotokea mabadiliko ya upeo, ratiba, au gharama.",
+    },
+  },
+  {
+    abbr: "05",
+    title: { en: "Project closing", sw: "Kufunga mradi" },
+    body: {
+      en: "Closing post-construction activities cleanly — punch-list, handover, documentation, and warranty period.",
+      sw: "Kufunga shughuli za baada ya ujenzi vizuri — orodha ya marekebisho, ukabidhi, nyaraka, na kipindi cha dhamana.",
+    },
+  },
+];
+
+export const safetyProgram = [
+  {
+    en: "Occupational health and safety workshops for all employees",
+    sw: "Warsha za afya na usalama kazini kwa wafanyakazi wote",
+  },
+  {
+    en: "Site induction before any work begins on a new or running project",
+    sw: "Maelekezo eneoni kabla ya kuanza kazi yoyote katika mradi mpya au unaoendelea",
+  },
+  {
+    en: "First-aid-trained site agents who can also assess risk on site",
+    sw: "Mawakala wa eneoni waliopata mafunzo ya huduma ya kwanza wanaoweza pia kutathmini hatari",
+  },
+  {
+    en: "On-site insurance for every employee through the Workers Compensation Fund",
+    sw: "Bima ya eneoni kwa kila mfanyakazi kupitia Mfuko wa Fidia kwa Wafanyakazi",
+  },
+  {
+    en: "Hazard signage, injury prevention, and risk-assessment training",
+    sw: "Alama za hatari, kinga ya majeraha, na mafunzo ya kutathmini hatari",
+  },
 ];
 
 export const directors = [
@@ -368,6 +561,11 @@ export const managementTeam = [
     { en: "Engineer", sw: "Mhandisi" },
     { en: "Civil Engineer", sw: "Uhandisi wa Kiraia" },
     yrs(3),
+  ],
+  [
+    { en: "Engineer", sw: "Mhandisi" },
+    { en: "Civil Engineer", sw: "Uhandisi wa Kiraia" },
+    yrs(30),
   ],
   [
     { en: "Secretary", sw: "Katibu" },

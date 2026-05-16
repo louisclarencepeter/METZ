@@ -79,6 +79,10 @@ const dict = {
     "about.tableName": "Name",
     "about.tableQual": "Qualification",
     "about.tableExp": "Experience",
+    "about.clients": "Corporate clients",
+    "about.clientsTitle": "Trusted by industrial and fuel-sector clients across Tanzania.",
+    "about.clientsBody":
+      "METZ has delivered work for major fuel retailers, mining operations, and industrial sites — combining mechanical, civil, and building capability on a single contractor.",
     "about.associate": "Associate staff network",
     "about.associateBody":
       "METZ maintains relationships with qualified individual personnel who can be engaged on a fee-for-service basis for specialist assignments.",
@@ -103,10 +107,14 @@ const dict = {
       "METZ regards the community as part of the project environment and keeps social responsibility visible in its public activities.",
     "services.objectives": "Strategic objectives",
     "services.objectivesTitle": "Focused growth through 2030.",
-    "services.safety.induction": "Site induction before work begins",
-    "services.safety.firstAid": "First-aid-trained site agents",
-    "services.safety.risk": "Risk assessment and hazard awareness",
-    "services.safety.injury": "Injury prevention training",
+    "services.sector": "Sector experience",
+    "services.sectorTitle": "Mechanical, civil, and building work under one roof.",
+    "services.sectorBody":
+      "METZ has delivered specialist mechanical and petroleum-sector work alongside its civil and building portfolio, giving clients a single contractor for complex multi-trade projects.",
+    "services.process": "Construction partnership",
+    "services.processTitle": "Five steps from kickoff to handover.",
+    "services.processBody":
+      "Across every delivery method, METZ partners with clients through the same five basic functions of the construction project.",
 
     "projects.eyebrow": "Projects",
     "projects.title": "Homes, housing, and road works delivered.",
@@ -118,6 +126,10 @@ const dict = {
     "projects.shown.many": "{count} projects shown",
     "projects.filterAria": "Project filters",
     "projects.filterAll": "All",
+    "projects.pastWorks": "Notable past works",
+    "projects.pastWorksTitle": "Selected works for major industrial and fuel-sector clients.",
+    "projects.pastWorksBody":
+      "Beyond the residential and road portfolio, METZ has delivered specialist mechanical and petroleum-sector projects across Tanzania.",
     "projects.viewPhotos": "View photos",
     "projects.thumbsAria": "{title} image preview",
     "projects.openPhoto": "Open {title} photo {index}",
@@ -232,6 +244,11 @@ const dict = {
     "about.tableName": "Jina",
     "about.tableQual": "Elimu",
     "about.tableExp": "Uzoefu",
+    "about.clients": "Wateja wakubwa",
+    "about.clientsTitle":
+      "Tunatumainika kwa wateja wa viwanda na sekta ya mafuta nchini kote.",
+    "about.clientsBody":
+      "METZ imetekeleza kazi kwa kampuni kubwa za mafuta, migodi, na maeneo ya viwanda — ikiunganisha ufundi, kazi za kiraia, na majengo katika mkandarasi mmoja.",
     "about.associate": "Wafanyakazi washirika",
     "about.associateBody":
       "METZ inashirikiana na wataalamu binafsi wenye sifa, wanaoitwa kazini kwa malipo wakati kazi maalum zinapotokea.",
@@ -257,10 +274,14 @@ const dict = {
       "Kwa METZ, jamii ni sehemu ya mazingira ya mradi, na wajibu kwa jamii unaonekana katika shughuli zetu za umma.",
     "services.objectives": "Malengo ya kimkakati",
     "services.objectivesTitle": "Ukuaji wenye mwelekeo, hadi 2030.",
-    "services.safety.induction": "Maelekezo eneoni kabla kazi haijaanza",
-    "services.safety.firstAid": "Mawakala wenye mafunzo ya msaada wa kwanza",
-    "services.safety.risk": "Tathmini ya hatari na utambuzi wa vihatarishi",
-    "services.safety.injury": "Mafunzo ya kuzuia majeraha",
+    "services.sector": "Uzoefu wa sekta",
+    "services.sectorTitle": "Ufundi, kazi za kiraia, na majengo katika mkandarasi mmoja.",
+    "services.sectorBody":
+      "METZ imetekeleza kazi maalumu za ufundi na sekta ya mafuta sambamba na kazi zake za kiraia na majengo, ikimpa mteja mkandarasi mmoja kwa miradi yenye taaluma mbalimbali.",
+    "services.process": "Ushirikiano wa ujenzi",
+    "services.processTitle": "Hatua tano kutoka kuanza hadi ukabidhi.",
+    "services.processBody":
+      "Katika kila mfumo wa utoaji, METZ inafanya kazi kwa kushirikiana na mteja kupitia hatua tano za msingi za mradi wa ujenzi.",
 
     "projects.eyebrow": "Miradi",
     "projects.title": "Nyumba, makazi, na barabara — zilizokamilika.",
@@ -272,6 +293,11 @@ const dict = {
     "projects.shown.many": "Miradi {count}",
     "projects.filterAria": "Vichujio vya miradi",
     "projects.filterAll": "Yote",
+    "projects.pastWorks": "Kazi maarufu za nyuma",
+    "projects.pastWorksTitle":
+      "Baadhi ya kazi tulizofanya kwa wateja wakubwa wa viwanda na mafuta.",
+    "projects.pastWorksBody":
+      "Mbali na kazi za makazi na barabara, METZ imetekeleza miradi maalumu ya ufundi na sekta ya mafuta nchini kote.",
     "projects.viewPhotos": "Tazama picha zote",
     "projects.thumbsAria": "Picha za {title}",
     "projects.openPhoto": "Fungua picha ya {index} ya {title}",

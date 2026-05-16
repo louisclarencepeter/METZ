@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
-import { ChevronLeft, ChevronRight, Images, MapPin, X } from "lucide-react";
+import { ChevronLeft, ChevronRight, Images, MapPin, Wrench, X } from "lucide-react";
 import { PageHero, SectionIntro } from "../components/PageSections.jsx";
-import { projects } from "../data/content.js";
+import { notablePastWorks, projects } from "../data/content.js";
 import { useI18n } from "../i18n.jsx";
 
 export default function Projects() {
@@ -139,6 +139,26 @@ export default function Projects() {
                   <Images size={17} aria-hidden="true" />
                   {t("projects.viewPhotos")}
                 </button>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="content-band">
+        <SectionIntro
+          eyebrow={t("projects.pastWorks")}
+          title={t("projects.pastWorksTitle")}
+          body={t("projects.pastWorksBody")}
+        />
+        <div className="past-works-grid">
+          {notablePastWorks.map((work, index) => (
+            <article className="past-work-card" key={`${work.client}-${index}`}>
+              <Wrench size={20} aria-hidden="true" />
+              <div>
+                <p className="eyebrow">{work.client}</p>
+                <h3>{t(work.location)}</h3>
+                <p>{t(work.scope)}</p>
               </div>
             </article>
           ))}

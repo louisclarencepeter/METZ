@@ -1,7 +1,8 @@
-import { BadgeCheck, UsersRound } from "lucide-react";
+import { BadgeCheck, Building2, UsersRound } from "lucide-react";
 import { PageHero, SectionIntro } from "../components/PageSections.jsx";
 import {
   companyParticulars,
+  corporateClients,
   directors,
   legalStatus,
   managementTeam,
@@ -96,6 +97,25 @@ export default function About() {
               ))}
             </tbody>
           </table>
+        </div>
+      </section>
+
+      <section className="content-band">
+        <SectionIntro
+          eyebrow={t("about.clients")}
+          title={t("about.clientsTitle")}
+          body={t("about.clientsBody")}
+        />
+        <div className="client-grid">
+          {corporateClients.map((client) => (
+            <article className="client-card" key={client.name}>
+              <Building2 size={22} aria-hidden="true" />
+              <div>
+                <h3>{client.name}</h3>
+                <p>{t(client.sector)}</p>
+              </div>
+            </article>
+          ))}
         </div>
       </section>
 

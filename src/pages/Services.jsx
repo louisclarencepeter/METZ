@@ -1,14 +1,14 @@
-import { ClipboardCheck, Construction, HardHat, Leaf, Ruler, ShieldCheck } from "lucide-react";
+import { ClipboardCheck, Construction, HardHat, Leaf, Ruler, ShieldCheck, Wrench } from "lucide-react";
 import { Callout, PageHero, SectionIntro } from "../components/PageSections.jsx";
-import { deliveryMethods, services, strategicObjectives } from "../data/content.js";
+import {
+  deliveryMethods,
+  partnershipPhases,
+  safetyProgram,
+  sectorExperience,
+  services,
+  strategicObjectives,
+} from "../data/content.js";
 import { useI18n } from "../i18n.jsx";
-
-const safetyKeys = [
-  "services.safety.induction",
-  "services.safety.firstAid",
-  "services.safety.risk",
-  "services.safety.injury",
-];
 
 export default function Services() {
   const { t } = useI18n();
@@ -42,6 +42,48 @@ export default function Services() {
         </div>
       </section>
 
+      <section className="content-band">
+        <SectionIntro
+          eyebrow={t("services.sector")}
+          title={t("services.sectorTitle")}
+          body={t("services.sectorBody")}
+        />
+        <div className="sector-grid">
+          {sectorExperience.map((sector) => (
+            <article className="sector-card" key={t(sector.title)}>
+              <Wrench size={22} aria-hidden="true" />
+              <h3>{t(sector.title)}</h3>
+              <p>{t(sector.body)}</p>
+              <ul>
+                {sector.capabilities.map((capability) => {
+                  const text = t(capability);
+                  return <li key={text}>{text}</li>;
+                })}
+              </ul>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="content-band">
+        <SectionIntro
+          eyebrow={t("services.process")}
+          title={t("services.processTitle")}
+          body={t("services.processBody")}
+        />
+        <ol className="phase-list">
+          {partnershipPhases.map((phase) => (
+            <li key={phase.abbr}>
+              <span aria-hidden="true">{phase.abbr}</span>
+              <div>
+                <h3>{t(phase.title)}</h3>
+                <p>{t(phase.body)}</p>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </section>
+
       <section className="content-band methods-band">
         <div>
           <p className="eyebrow">{t("services.delivery")}</p>
@@ -64,12 +106,15 @@ export default function Services() {
           <p>{t("services.safetyBody")}</p>
         </div>
         <ul className="check-list">
-          {safetyKeys.map((key) => (
-            <li key={key}>
-              <ShieldCheck size={19} aria-hidden="true" />
-              {t(key)}
-            </li>
-          ))}
+          {safetyProgram.map((item) => {
+            const text = t(item);
+            return (
+              <li key={text}>
+                <ShieldCheck size={19} aria-hidden="true" />
+                {text}
+              </li>
+            );
+          })}
         </ul>
       </section>
 
