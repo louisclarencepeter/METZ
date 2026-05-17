@@ -1797,6 +1797,7 @@ address strong,
 
   .home-hero {
     min-height: 42rem;
+    align-items: center;
   }
 
   .page-hero {
@@ -1808,7 +1809,7 @@ address strong,
   }
 
   .home-hero__content {
-    padding-bottom: 5.5rem;
+    padding-bottom: 2rem;
     text-align: center;
   }
 
