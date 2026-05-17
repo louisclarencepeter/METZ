@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { ArrowUpRight, Mail, MapPin, Menu, Phone, X, Linkedin, Twitter, Facebook, Instagram } from "lucide-react";
+import { ArrowUpRight, Mail, MapPin, Menu, Phone, X } from "lucide-react";
+import { Linkedin, Twitter, Facebook, Instagram } from "./components/Icons.jsx";
 import { NavLink, Navigate, Route, Routes, useLocation } from "react-router-dom";
 import About from "./pages/About.jsx";
 import Contact from "./pages/Contact.jsx";
