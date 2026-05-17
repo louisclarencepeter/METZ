@@ -69,7 +69,7 @@ export default function Projects() {
         eyebrow={t("projects.eyebrow")}
         title={t("projects.title")}
         body={t("projects.body")}
-        image="/images/Projects/p2/pr1.png"
+        image="/images/Projects/p2/pr1.webp"
       />
 
       <section className="content-band">

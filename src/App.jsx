@@ -138,7 +138,7 @@ function Header() {
 
       <div className="navbar">
         <NavLink className="brand" to="/" aria-label={t("nav.aria.brandHome")}>
-          <img src="/images/logo.png" alt="METZ Engineering logo" />
+          <img src="/icons/icon-192.png" alt="METZ Engineering logo" width="50" height="50" />
           <span>
             <strong>METZ</strong>
             <small>Engineering Co. Limited</small>
@@ -184,7 +184,7 @@ function Header() {
       >
         <div className="drawer-header">
           <NavLink className="brand" to="/" aria-label={t("nav.aria.brandHome")} onClick={() => setIsOpen(false)}>
-            <img src="/images/logo.png" alt="METZ Engineering logo" />
+            <img src="/icons/icon-192.png" alt="METZ Engineering logo" width="38" height="38" />
             <span>
               <strong>METZ</strong>
               <small>Engineering Co. Limited</small>
@@ -242,7 +242,7 @@ function Footer() {
     <footer className="site-footer">
       <div className="footer-grid">
         <div>
-          <img src="/images/logo.png" alt="" />
+          <img src="/icons/icon-192.png" alt="" width="50" height="50" />
           <h2>METZ Engineering Co. Limited</h2>
           <p>{t(company.tagline)}</p>
         </div>

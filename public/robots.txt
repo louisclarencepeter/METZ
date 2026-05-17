@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://metzengineering.co.tz/sitemap.xml

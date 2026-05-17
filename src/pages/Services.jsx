@@ -18,7 +18,7 @@ export default function Services() {
         eyebrow={t("services.eyebrow")}
         title={t("services.title")}
         body={t("services.body")}
-        image="/images/Projects/p3/pr2.png"
+        image="/images/Projects/p3/pr2.webp"
       />
 
       <section className="content-band">

@@ -17,7 +17,7 @@ export default function About() {
         eyebrow={t("about.eyebrow")}
         title={t("about.title")}
         body={t("about.body")}
-        image="/images/Projects/p1/pr2.png"
+        image="/images/Projects/p1/pr2.webp"
       />
 
       <section className="content-band particulars-band">

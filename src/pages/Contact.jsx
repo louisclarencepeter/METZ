@@ -64,7 +64,7 @@ export default function Contact() {
         eyebrow={t("contact.eyebrow")}
         title={t("contact.title")}
         body={t("contact.body")}
-        image="/images/pexels-jeshootscom-442580.jpg"
+        image="/images/hero-building.webp"
       />
 
       <section className="content-band contact-layout">

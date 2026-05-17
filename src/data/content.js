@@ -27,7 +27,7 @@ export const stats = [
 
 export const featuredProjects = [
   {
-    image: "/images/Projects/pr1.jpg",
+    image: "/images/Projects/pr1.webp",
     alt: {
       en: "Completed residential house in Mtoni Kijichi, Dar es Salaam.",
       sw: "Nyumba ya makazi iliyokamilika Mtoni Kijichi, Dar es Salaam.",
@@ -44,7 +44,7 @@ export const featuredProjects = [
     },
   },
   {
-    image: "/images/Projects/pr2.jpg",
+    image: "/images/Projects/pr2.webp",
     alt: {
       en: "Affordable housing units delivered in Temeke Municipality.",
       sw: "Nyumba za bei nafuu zilizojengwa Manispaa ya Temeke.",
@@ -58,7 +58,7 @@ export const featuredProjects = [
     },
   },
   {
-    image: "/images/Projects/pr3.png",
+    image: "/images/Projects/pr3.webp",
     alt: {
       en: "Resurfaced 2km section of Wailes Road in Lindi Municipal Council.",
       sw: "Kilomita 2 za Barabara ya Wailes zilizofanyiwa matengenezo, Halmashauri ya Lindi.",
