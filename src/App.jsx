@@ -92,8 +92,13 @@ function Header() {
     setIsOpen(false);
   }, [location.pathname]);
 
+  useEffect(() => {
+    document.body.style.overflow = isOpen ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [isOpen]);
+
   return (
-    <header className={`site-header ${isOpen ? "menu-open" : ""}`}>
+    <header className="site-header">
       <div className="topbar">
         <span>
           <MapPin size={16} aria-hidden="true" />
@@ -121,35 +126,83 @@ function Header() {
           aria-expanded={isOpen}
           onClick={() => setIsOpen((current) => !current)}
         >
-          {isOpen ? <X size={22} /> : <Menu size={22} />}
+          <Menu size={22} />
         </button>
 
-        <nav className={isOpen ? "primary-nav is-open" : "primary-nav"} aria-label={t("nav.aria.main")}>
+        <nav className="primary-nav" aria-label={t("nav.aria.main")}>
           <ul>
             {navItems.map((item) => (
               <li key={item.to}>
-                <NavLink to={item.to} onClick={() => setIsOpen(false)}>{t(item.key)}</NavLink>
+                <NavLink to={item.to}>{t(item.key)}</NavLink>
               </li>
             ))}
           </ul>
-          {isOpen && (
-            <div className="mobile-menu-footer">
-              <div className="social-links">
-                <a href="#" aria-label="LinkedIn"><Linkedin size={20} /></a>
-                <a href="#" aria-label="Twitter"><Twitter size={20} /></a>
-                <a href="#" aria-label="Facebook"><Facebook size={20} /></a>
-                <a href="#" aria-label="Instagram"><Instagram size={20} /></a>
-              </div>
-              <div className="contact-info">
-                <p>T: {company.phonePrimary}</p>
-                <p>E: {company.email}</p>
-                <p>DAR ES SALAAM, TZ</p>
-              </div>
-            </div>
-          )}
+        </nav>
+      </div>
+
+      {/* Backdrop */}
+      <div
+        className={`drawer-backdrop${isOpen ? " is-visible" : ""}`}
+        aria-hidden="true"
+        onClick={() => setIsOpen(false)}
+      />
+
+      {/* Slide-in Drawer */}
+      <aside
+        className={`mobile-drawer${isOpen ? " is-open" : ""}`}
+        aria-label="Mobile navigation"
+        aria-hidden={!isOpen}
+      >
+        <div className="drawer-header">
+          <NavLink className="brand" to="/" aria-label={t("nav.aria.brandHome")} onClick={() => setIsOpen(false)}>
+            <img src="/images/logo.png" alt="METZ Engineering logo" />
+            <span>
+              <strong>METZ</strong>
+              <small>Engineering Co. Limited</small>
+            </span>
+          </NavLink>
+          <button
+            className="drawer-close"
+            type="button"
+            aria-label={t("nav.aria.close")}
+            onClick={() => setIsOpen(false)}
+          >
+            <X size={20} />
+          </button>
+        </div>
+
+        <nav className="drawer-nav" aria-label={t("nav.aria.main")}>
+          <ul>
+            {navItems.map((item) => (
+              <li key={item.to}>
+                <NavLink to={item.to} onClick={() => setIsOpen(false)}>
+                  <span>{t(item.key)}</span>
+                  <ArrowUpRight size={15} aria-hidden="true" />
+                </NavLink>
+              </li>
+            ))}
+          </ul>
         </nav>
 
-      </div>
+        <div className="drawer-footer">
+          <div className="drawer-social">
+            <a href="#" aria-label="LinkedIn"><Linkedin size={18} /></a>
+            <a href="#" aria-label="Twitter"><Twitter size={18} /></a>
+            <a href="#" aria-label="Facebook"><Facebook size={18} /></a>
+            <a href="#" aria-label="Instagram"><Instagram size={18} /></a>
+          </div>
+          <div className="drawer-contact">
+            <a href={telHref(company.phonePrimary)}>
+              <Phone size={13} aria-hidden="true" />
+              {company.phonePrimary}
+            </a>
+            <a href={`mailto:${company.email}`}>
+              <Mail size={13} aria-hidden="true" />
+              {company.email}
+            </a>
+          </div>
+        </div>
+      </aside>
     </header>
   );
 }
