@@ -1649,25 +1649,87 @@ address strong,
     display: inline-flex;
   }
 
+  /* Header adjustments when menu is open */
+  .site-header.menu-open {
+    background: #1a1a1a;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .site-header.menu-open .brand img {
+    filter: invert(1) brightness(2);
+  }
+
+  .site-header.menu-open .icon-button {
+    background: transparent;
+    color: #ffffff;
+  }
+
   .primary-nav {
     display: none;
-    grid-column: 1 / -1;
-    justify-self: stretch;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 75px);
+    background: #1a1a1a url("/images/blueprint-bg.png") center / cover no-repeat;
+    background-attachment: fixed;
+    overflow-y: auto;
   }
 
   .primary-nav.is-open {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    animation: fade-in 300ms ease;
   }
 
   .primary-nav ul {
-    display: grid;
-    gap: 0.35rem;
-    padding-top: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    padding: 3rem 2rem;
+    gap: 1.5rem;
   }
 
   .primary-nav a {
-    border-radius: var(--radius);
-    background: var(--surface-strong);
+    display: inline-block;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: clamp(2.5rem, 10vw, 3.5rem);
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #ffffff;
+    background: transparent;
+    border: none;
+    padding: 0;
+    line-height: 1.1;
+  }
+
+  .primary-nav a.active {
+    border-bottom: 4px solid var(--forest);
+    padding-bottom: 0.1rem;
+  }
+
+  .mobile-menu-footer {
+    padding: 0 2rem 8rem;
+    color: #ffffff;
+  }
+
+  .mobile-menu-footer .social-links {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .mobile-menu-footer .social-links a {
+    font-size: initial;
+    color: #ffffff;
+    opacity: 0.8;
+  }
+
+  .mobile-menu-footer .contact-info p {
+    margin: 0 0 0.4rem 0;
+    font-size: 0.95rem;
+    letter-spacing: 0.05em;
+    opacity: 0.9;
   }
 
   .stats-band,

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ArrowUpRight, Mail, MapPin, Menu, Phone, X } from "lucide-react";
+import { ArrowUpRight, Mail, MapPin, Menu, Phone, X, Linkedin, Twitter, Facebook, Instagram } from "lucide-react";
 import { NavLink, Navigate, Route, Routes, useLocation } from "react-router-dom";
 import About from "./pages/About.jsx";
 import Contact from "./pages/Contact.jsx";
@@ -92,7 +92,7 @@ function Header() {
   }, [location.pathname]);
 
   return (
-    <header className="site-header">
+    <header className={`site-header ${isOpen ? "menu-open" : ""}`}>
       <div className="topbar">
         <span>
           <MapPin size={16} aria-hidden="true" />
@@ -127,10 +127,25 @@ function Header() {
           <ul>
             {navItems.map((item) => (
               <li key={item.to}>
-                <NavLink to={item.to}>{t(item.key)}</NavLink>
+                <NavLink to={item.to} onClick={() => setIsOpen(false)}>{t(item.key)}</NavLink>
               </li>
             ))}
           </ul>
+          {isOpen && (
+            <div className="mobile-menu-footer">
+              <div className="social-links">
+                <a href="#" aria-label="LinkedIn"><Linkedin size={20} /></a>
+                <a href="#" aria-label="Twitter"><Twitter size={20} /></a>
+                <a href="#" aria-label="Facebook"><Facebook size={20} /></a>
+                <a href="#" aria-label="Instagram"><Instagram size={20} /></a>
+              </div>
+              <div className="contact-info">
+                <p>T: {company.phonePrimary}</p>
+                <p>E: {company.email}</p>
+                <p>DAR ES SALAAM, TZ</p>
+              </div>
+            </div>
+          )}
         </nav>
 
       </div>
