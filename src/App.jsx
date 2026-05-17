@@ -93,6 +93,32 @@ function Header() {
   }, [location.pathname]);
 
   useEffect(() => {
+    if (!isOpen) return undefined;
+
+    const closeOnEscape = (event) => {
+      if (event.key === "Escape") {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener("keydown", closeOnEscape);
+    return () => document.removeEventListener("keydown", closeOnEscape);
+  }, [isOpen]);
+
+  useEffect(() => {
+    const desktopQuery = window.matchMedia("(min-width: 981px)");
+    const closeOnDesktop = (event) => {
+      if (event.matches) {
+        setIsOpen(false);
+      }
+    };
+
+    closeOnDesktop(desktopQuery);
+    desktopQuery.addEventListener("change", closeOnDesktop);
+    return () => desktopQuery.removeEventListener("change", closeOnDesktop);
+  }, []);
+
+  useEffect(() => {
     document.body.style.overflow = isOpen ? "hidden" : "";
     return () => { document.body.style.overflow = ""; };
   }, [isOpen]);
@@ -123,6 +149,7 @@ function Header() {
           className="icon-button nav-toggle"
           type="button"
           aria-label={isOpen ? t("nav.aria.close") : t("nav.aria.open")}
+          aria-controls="mobile-navigation"
           aria-expanded={isOpen}
           onClick={() => setIsOpen((current) => !current)}
         >
@@ -149,9 +176,11 @@ function Header() {
 
       {/* Slide-in Drawer */}
       <aside
+        id="mobile-navigation"
         className={`mobile-drawer${isOpen ? " is-open" : ""}`}
         aria-label="Mobile navigation"
         aria-hidden={!isOpen}
+        inert={!isOpen}
       >
         <div className="drawer-header">
           <NavLink className="brand" to="/" aria-label={t("nav.aria.brandHome")} onClick={() => setIsOpen(false)}>
