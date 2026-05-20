@@ -1,9 +1,11 @@
-const CACHE_NAME = "metz-static-v1";
+const CACHE_NAME = "metz-static-v2";
 const CORE_ASSETS = [
   "/",
   "/manifest.webmanifest",
   "/icons/icon-192.png",
-  "/icons/icon-512.png"
+  "/icons/icon-512.png",
+  "/icons/maskable-512.png",
+  "/images/hero-building-960.webp"
 ];
 
 self.addEventListener("install", (event) => {
@@ -35,6 +37,10 @@ self.addEventListener("fetch", (event) => {
   const url = new URL(request.url);
 
   if (request.method !== "GET" || url.origin !== self.location.origin) {
+    return;
+  }
+
+  if (url.pathname.startsWith("/api/")) {
     return;
   }
 

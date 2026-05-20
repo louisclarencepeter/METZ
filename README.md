@@ -44,18 +44,28 @@ npm run build
 
 ## Contact form (Netlify Function + Resend)
 
-The contact form posts JSON to `/api/contact`, which is redirected to a
-Netlify Function at `netlify/functions/contact.js`. The function calls the
-[Resend](https://resend.com) REST API to deliver the inquiry to
-`info@metzengineering.co.tz`, with the visitor's address set as `Reply-To`.
+The contact form posts JSON to `/api/contact`, which is handled by the Netlify
+Function at `netlify/functions/contact.js`. The function calls the
+[Resend](https://resend.com) REST API to deliver the inquiry, with the visitor's
+address set as `Reply-To`.
 
 Required setup:
 
 1. **Verify the sender domain** (`metzengineering.co.tz`) in Resend so the
    function can send from `noreply@metzengineering.co.tz`.
-2. **Set the `RESEND_API_KEY` environment variable** in Netlify
-   (Site settings → Environment variables). The function returns a 500 if it
-   is missing.
+2. **Create a Resend API key** with permission to send email.
+3. **Set the environment variables** in Netlify
+   (Site settings → Environment variables):
+
+```bash
+RESEND_API_KEY=re_...
+CONTACT_FROM=METZ Website <noreply@metzengineering.co.tz>
+CONTACT_TO=info@metzengineering.co.tz
+```
+
+`CONTACT_FROM` and `CONTACT_TO` are optional. If omitted, the function uses the
+values shown above. `RESEND_API_KEY` is required, and the function returns a 500
+if it is missing.
 
 To run the function locally, use the Netlify CLI (plain `vite` does not
 execute Netlify Functions):
@@ -66,7 +76,8 @@ netlify dev
 ```
 
 Then create a `.env` file (gitignored) with `RESEND_API_KEY=...` for local
-testing.
+testing. You can also add `CONTACT_FROM` and `CONTACT_TO` there when testing a
+different sender or recipient.
 
 ## Security Policy
 Please refer to the [security policy](SECURITY.md) here

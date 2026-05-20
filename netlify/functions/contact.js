@@ -1,6 +1,11 @@
-const FROM_ADDRESS = "METZ Website <noreply@metzengineering.co.tz>";
-const TO_ADDRESS = "info@metzengineering.co.tz";
+const DEFAULT_FROM_ADDRESS = "METZ Website <noreply@metzengineering.co.tz>";
+const DEFAULT_TO_ADDRESS = "info@metzengineering.co.tz";
 const MAX_FIELD_LENGTH = 5000;
+
+const getEnv = (name) => {
+  if (globalThis.Netlify?.env) return globalThis.Netlify.env.get(name);
+  return process.env[name];
+};
 
 const json = (status, body) =>
   new Response(JSON.stringify(body), {
@@ -54,12 +59,14 @@ export default async (req) => {
     return json(400, { error: "Field too long" });
   }
 
-  const apiKey = process.env.RESEND_API_KEY;
+  const apiKey = getEnv("RESEND_API_KEY");
   if (!apiKey) {
     console.error("RESEND_API_KEY is not set");
     return json(500, { error: "Email service not configured" });
   }
 
+  const fromAddress = getEnv("CONTACT_FROM") || DEFAULT_FROM_ADDRESS;
+  const toAddress = getEnv("CONTACT_TO") || DEFAULT_TO_ADDRESS;
   const subject = `New website inquiry — ${name}`;
   const lines = [
     `Name: ${name}`,
@@ -89,8 +96,8 @@ export default async (req) => {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      from: FROM_ADDRESS,
-      to: TO_ADDRESS,
+      from: fromAddress,
+      to: toAddress,
       reply_to: email,
       subject,
       text,
@@ -105,4 +112,9 @@ export default async (req) => {
   }
 
   return json(200, { ok: true });
+};
+
+export const config = {
+  path: "/api/contact",
+  method: ["POST"],
 };

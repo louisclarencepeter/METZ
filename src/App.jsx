@@ -1,18 +1,19 @@
-import { useEffect, useState } from "react";
+import { lazy, Suspense, useEffect, useState } from "react";
 import { ArrowUpRight, Mail, MapPin, Menu, Phone, X } from "lucide-react";
 import { Linkedin, Twitter, Facebook, Instagram } from "./components/Icons.jsx";
 import { NavLink, Navigate, Route, Routes, useLocation } from "react-router-dom";
-import About from "./pages/About.jsx";
-import Contact from "./pages/Contact.jsx";
-import Home from "./pages/Home.jsx";
-import NotFound from "./pages/NotFound.jsx";
-import Projects from "./pages/Projects.jsx";
-import Services from "./pages/Services.jsx";
 import LanguageToggle from "./components/LanguageToggle.jsx";
 import ThemeToggle from "./components/ThemeToggle.jsx";
 import { useI18n } from "./i18n.jsx";
 import { company } from "./data/content.js";
 import { telHref } from "./utils/format.js";
+import Home from "./pages/Home.jsx";
+
+const About = lazy(() => import("./pages/About.jsx"));
+const Contact = lazy(() => import("./pages/Contact.jsx"));
+const NotFound = lazy(() => import("./pages/NotFound.jsx"));
+const Projects = lazy(() => import("./pages/Projects.jsx"));
+const Services = lazy(() => import("./pages/Services.jsx"));
 
 const legacyRoutes = {
   "/home.html": "/",
@@ -302,18 +303,20 @@ export default function App() {
     <div className="app-shell">
       <SkipLink />
       <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/home" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/contact" element={<Contact />} />
-        {Object.entries(legacyRoutes).map(([from, to]) => (
-          <Route key={from} path={from} element={<LegacyRedirect to={to} />} />
-        ))}
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+      <Suspense fallback={null}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/contact" element={<Contact />} />
+          {Object.entries(legacyRoutes).map(([from, to]) => (
+            <Route key={from} path={from} element={<LegacyRedirect to={to} />} />
+          ))}
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </Suspense>
       <Footer />
     </div>
   );

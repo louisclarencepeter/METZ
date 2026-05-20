@@ -10,7 +10,18 @@ export default function Home() {
   return (
     <main id="main-content">
       <section className="home-hero">
-        <div className="home-hero__image" aria-hidden="true" />
+        <div className="home-hero__image" aria-hidden="true">
+          <img
+            src="/images/hero-building.webp"
+            srcSet="/images/hero-building-960.webp 960w, /images/hero-building-1440.webp 1440w, /images/hero-building.webp 1920w"
+            sizes="100vw"
+            alt=""
+            width="1920"
+            height="1280"
+            decoding="async"
+            fetchPriority="high"
+          />
+        </div>
         <div className="home-hero__content">
           <p className="eyebrow">{t("home.eyebrow")}</p>
           <h1>METZ Engineering Co. Limited</h1>

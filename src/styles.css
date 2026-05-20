@@ -50,11 +50,14 @@
 }
 
 html {
+  width: 100%;
+  overflow-x: hidden;
   scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
+  width: 100%;
   min-width: 320px;
   overflow-x: hidden;
   color: var(--ink);
@@ -662,8 +665,13 @@ main {
   position: absolute;
   inset: 0;
   z-index: -2;
-  background: url("/images/hero-building.webp") center / cover;
   animation: hero-image-settle 1400ms ease both;
+}
+
+.home-hero__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .home-hero::after {
@@ -679,7 +687,7 @@ main {
 .home-hero__content {
   position: relative;
   z-index: 1;
-  width: min(1180px, calc(100vw - 2.5rem));
+  width: min(1180px, calc(100% - 2.5rem));
   margin: 0 auto;
   padding-bottom: clamp(2rem, 8vh, 5rem);
   animation: fade-up 780ms ease 120ms both;
@@ -1790,8 +1798,10 @@ address strong,
 .footer-controls {
   display: inline-flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 1.25rem;
   margin-left: auto;
+  min-width: 0;
 }
 
 .theme-toggle,
@@ -1963,6 +1973,7 @@ address strong,
 @media (max-width: 640px) {
   .home-hero {
     overflow: hidden;
+    padding-inline: 1rem;
   }
 
   .home-hero__image {
@@ -1988,6 +1999,7 @@ address strong,
   }
 
   .home-hero__content {
+    width: 100%;
     padding-bottom: 2rem;
     text-align: center;
   }
