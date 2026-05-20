@@ -901,6 +901,7 @@ main > section:last-child:not(.callout) {
 .detail-panel,
 .contact-panel,
 .contact-form,
+.contact-confirmation,
 .objectives-grid article,
 .vision-grid article,
 .associate-band {
@@ -1052,7 +1053,8 @@ main > section:last-child:not(.callout) {
 .objectives-grid article,
 .detail-panel,
 .contact-panel,
-.contact-form {
+.contact-form,
+.contact-confirmation {
   padding: clamp(1.25rem, 3vw, 2rem);
 }
 
@@ -1668,6 +1670,46 @@ th {
 .contact-form {
   display: grid;
   gap: 1rem;
+}
+
+.contact-confirmation {
+  display: grid;
+  align-content: center;
+  gap: 1rem;
+  min-height: 30rem;
+}
+
+.contact-confirmation__icon {
+  display: grid;
+  place-items: center;
+  width: 4rem;
+  height: 4rem;
+  color: #0f5132;
+  background: #d1fae5;
+  border-radius: 50%;
+}
+
+.contact-confirmation h2 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.05;
+}
+
+.contact-confirmation p {
+  max-width: 42rem;
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.contact-confirmation .eyebrow {
+  margin: 0;
+}
+
+.contact-confirmation .button {
+  width: fit-content;
+  margin-top: 0.5rem;
 }
 
 .field-grid {

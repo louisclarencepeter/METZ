@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Mail, MapPin, Phone, Send } from "lucide-react";
+import { CheckCircle2, Mail, MapPin, Phone, Send } from "lucide-react";
 import { PageHero } from "../components/PageSections.jsx";
 import { company, services } from "../data/content.js";
 import { useI18n } from "../i18n.jsx";
@@ -25,6 +25,11 @@ export default function Contact() {
   function updateField(event) {
     const { name, value } = event.target;
     setForm((currentForm) => ({ ...currentForm, [name]: value }));
+  }
+
+  function startNewInquiry() {
+    setForm(makeInitial(t));
+    setStatus({ type: "", message: "" });
   }
 
   async function submitForm(event) {
@@ -89,79 +94,91 @@ export default function Contact() {
           </p>
         </aside>
 
-        <form
-          className="contact-form"
-          name="contact"
-          method="POST"
-          onSubmit={submitForm}
-        >
-          <p hidden>
+        {status.type === "success" ? (
+          <section className="contact-confirmation" role="status" aria-live="polite">
+            <span className="contact-confirmation__icon">
+              <CheckCircle2 size={34} aria-hidden="true" />
+            </span>
+            <p className="eyebrow">{t("contact.form.successEyebrow")}</p>
+            <h2>{t("contact.form.successTitle")}</h2>
+            <p>{status.message}</p>
+            <p>{t("contact.form.successBody")}</p>
+            <button className="button button-primary" type="button" onClick={startNewInquiry}>
+              {t("contact.form.sendAnother")}
+            </button>
+          </section>
+        ) : (
+          <form
+            className="contact-form"
+            name="contact"
+            method="POST"
+            onSubmit={submitForm}
+          >
+            <p hidden>
+              <label>
+                {t("contact.form.honeypot")}
+                <input
+                  name="bot-field"
+                  value={form["bot-field"]}
+                  onChange={updateField}
+                  tabIndex="-1"
+                  autoComplete="off"
+                />
+              </label>
+            </p>
+
+            <div className="field-grid">
+              <label>
+                {t("contact.form.name")}
+                <input name="name" type="text" value={form.name} onChange={updateField} required />
+              </label>
+
+              <label>
+                {t("contact.form.email")}
+                <input name="email" type="email" value={form.email} onChange={updateField} required />
+              </label>
+            </div>
+
+            <div className="field-grid">
+              <label>
+                {t("contact.form.phone")}
+                <input name="phone" type="tel" value={form.phone} onChange={updateField} />
+              </label>
+
+              <label>
+                {t("contact.form.service")}
+                <select name="service" value={form.service} onChange={updateField}>
+                  {services.map((service) => {
+                    const label = t(service.title);
+                    return <option key={label}>{label}</option>;
+                  })}
+                </select>
+              </label>
+            </div>
+
             <label>
-              {t("contact.form.honeypot")}
-              <input
-                name="bot-field"
-                value={form["bot-field"]}
+              {t("contact.form.message")}
+              <textarea
+                name="message"
+                rows="7"
+                value={form.message}
                 onChange={updateField}
-                tabIndex="-1"
-                autoComplete="off"
+                placeholder={t("contact.form.placeholder")}
+                required
               />
             </label>
-          </p>
 
-          <div className="field-grid">
-            <label>
-              {t("contact.form.name")}
-              <input name="name" type="text" value={form.name} onChange={updateField} required />
-            </label>
-
-            <label>
-              {t("contact.form.email")}
-              <input name="email" type="email" value={form.email} onChange={updateField} required />
-            </label>
-          </div>
-
-          <div className="field-grid">
-            <label>
-              {t("contact.form.phone")}
-              <input name="phone" type="tel" value={form.phone} onChange={updateField} />
-            </label>
-
-            <label>
-              {t("contact.form.service")}
-              <select name="service" value={form.service} onChange={updateField}>
-                {services.map((service) => {
-                  const label = t(service.title);
-                  return <option key={label}>{label}</option>;
-                })}
-              </select>
-            </label>
-          </div>
-
-          <label>
-            {t("contact.form.message")}
-            <textarea
-              name="message"
-              rows="7"
-              value={form.message}
-              onChange={updateField}
-              placeholder={t("contact.form.placeholder")}
-              required
-            />
-          </label>
-
-          <button className="button button-primary" type="submit" disabled={submitting}>
-            <Send size={18} aria-hidden="true" />
-            {submitting ? t("contact.form.submitting") : t("contact.form.submit")}
-          </button>
-          {status.message && (
-            <p
-              className={status.type === "error" ? "form-status form-status--error" : "form-status"}
-              role="status"
-            >
-              {status.message}
-            </p>
-          )}
-        </form>
+            <button className="button button-primary" type="submit" disabled={submitting}>
+              <Send size={18} aria-hidden="true" />
+              {submitting ? t("contact.form.submitting") : t("contact.form.submit")}
+            </button>
+            {status.message && (
+              <p className="form-status form-status--error" role="status">
+                {status.message}
+              </p>
+            )}
+          </form>
+        )}
       </section>
     </main>
   );

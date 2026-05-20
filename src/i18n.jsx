@@ -154,6 +154,11 @@ const dict = {
     "contact.form.submit": "Send inquiry",
     "contact.form.submitting": "Sending...",
     "contact.form.success": "Thanks — your inquiry has been sent. METZ will follow up shortly.",
+    "contact.form.successEyebrow": "Inquiry sent",
+    "contact.form.successTitle": "Thank you for reaching out.",
+    "contact.form.successBody":
+      "A copy of your details has been delivered to the METZ team. You can expect a response through the email or phone number you shared.",
+    "contact.form.sendAnother": "Send another inquiry",
     "contact.form.error":
       "Something went wrong sending the form. Please email info@metzengineering.co.tz directly.",
     "contact.form.honeypot": "Don't fill this out:",
@@ -323,6 +328,11 @@ const dict = {
     "contact.form.submit": "Tuma ombi",
     "contact.form.submitting": "Inatuma...",
     "contact.form.success": "Asante — ombi lako limefika. METZ itakujibu hivi karibuni.",
+    "contact.form.successEyebrow": "Ombi limetumwa",
+    "contact.form.successTitle": "Asante kwa kuwasiliana nasi.",
+    "contact.form.successBody":
+      "Maelezo yako yametumwa kwa timu ya METZ. Tutakujibu kupitia barua pepe au namba ya simu uliyoweka.",
+    "contact.form.sendAnother": "Tuma ombi lingine",
     "contact.form.error":
       "Samahani, kuna tatizo la kutuma fomu. Tutumie barua pepe moja kwa moja kupitia info@metzengineering.co.tz.",
     "contact.form.honeypot": "Usijaze hapa:",
