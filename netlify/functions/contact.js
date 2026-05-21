@@ -24,10 +24,6 @@ const escapeHtml = (value) =>
 const isEmail = (value) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
 
 export default async (req) => {
-  if (req.method !== "POST") {
-    return json(405, { error: "Method not allowed" });
-  }
-
   let payload;
   try {
     payload = await req.json();
